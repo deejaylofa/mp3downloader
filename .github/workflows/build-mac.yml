@@ -23,11 +23,11 @@ jobs:
     - name: Install Python Dependencies
       run: pip install yt-dlp pyinstaller
 
-    - name: Build App with PyInstaller
-      run: pyinstaller --noconsole --onefile app.py
+    - name: Build App with Spec File
+      run: pyinstaller app.spec
 
     - name: Upload macOS Artifact
       uses: actions/upload-artifact@v4
       with:
         name: YouTubeDownloader-Mac
-        path: dist/app
+        path: dist/YouTubeDownloader.app
